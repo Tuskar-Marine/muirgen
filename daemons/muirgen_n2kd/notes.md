@@ -240,25 +240,36 @@ Your new ntp server is up and running!
 
 As 'admin':
 
- cd ~
- if [ ! -d ~/daemons ]; then mkdir daemons; fi
- cd ~/daemons
- cargo new muirgen-n2kd
- cd ~/daemons/muirgen-n2kd
+```
+cd ~
+if [ ! -d ~/daemons ]; then mkdir daemons; fi
+cd ~/daemons
+cargo new muirgen-n2kd
+cd ~/daemons/muirgen-n2kd
+```
 
-Install serde_json;
+Install serde_json and mqtt;
 
- cargo add serde_json
+```
+cargo add serde_json
+cargo add rumqttc
+```
 
 The main config for the program is in Cargo.toml (define dependencies here, for example). The program's root is in the 'src' sub directory.
 
- cd ~/daemons/muirgen-n2kd/src
+```
+cd ~/daemons/muirgen-n2kd/src
+```
 
 There is a sample program called 'main.rs' that you can compile and run;
 
-  cargo run
+```
+cargo run
+```
 
 This will compile and run the program. The compiled output is stored under '~/daemons/muirgen-n2kd/target/debug/'.
+
+
 
 ## Application notes
 

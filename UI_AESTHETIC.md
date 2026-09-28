@@ -1,10 +1,10 @@
 # Muirgen Alpha - UI Aesthetics & Design Guidelines
 
-This document serves as the absolute source of truth for the Muirgen user interface design language. Any future AI agents or developers working on this codebase must strictly adhere to these principles.
+This document is the source of truth for the Muirgen user interface design language. Any future developers (or AI agents) working on this codebase must strictly adhere to these principles.
 
 ## 1. Cassette Futurism & 80s Sci-Fi Roots
 Muirgen is designed for active maritime deployment but heavily leans into an 80s "sci-fi space ship" aesthetic. 
-- **Hardware Permanence:** The software must feel like it is physically etched into a CRT glass. Floating windows, drop shadows, and modern "app icon" grids are forbidden. 
+- **Hardware Permanence:** The software must feel like it is physically etched into a CRT glass. Floating windows, drop shadows, and modern "app icon" grids are not to be used. 
 - **The Tactical Array:** Interfaces should resemble dense grids of tactile, chunky hardware buttons. Use bracketed typography (e.g., `[ NAV_SYS ]`) and horizontal dividing lines (`====`) to build structural, tabular grids.
 - **Modals are Forbidden:** Do not use floating modal overlays. The central viewport acts as a dedicated, switchable CRT. Peripheral instruments (Sidebar, Header, Footer) must remain fixed and visible at all times to preserve muscle memory during emergencies.
 

@@ -27,11 +27,21 @@ Almalinux 10 base OS setup. Assumes the unprivileged user is `admin`.
 
 Enable encumbered media conversion support and postgresql v18 + timesscale extension repos.
 
+Installing PostgreSQL v18 and TimescaleDB v2 on Raspberry Pi 5.
 ```
-#dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-10-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-dnf install -y https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-10.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/
-#curl -s https://packagecloud.io/install/repositories/timescale/timescaledb/script.rpm.sh | sudo bash
-rpmfusion-nonfree-release-10.noarch.rpm
+dnf config-manager --save --setopt=pgdg18.exclude='timescaledb_*'
+```
+
+```
+dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-10-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+# NOTE: As of Sep. 2026, the postgresql repo keys are SHA-1 signed, which is not supported by EL10. To fix, change: 'repo_gpgcheck = 1' to '0' in the pgsql repo file.
+
+dnf install -y https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-10.noarch.rpm 
+dnf install https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-10.noarch.rpm
+curl -s https://packagecloud.io/install/repositories/timescale/timescaledb/script.rpm.sh | sudo bash
+# NOTE: As of Sep. 2026, the installed repo setups up for el/10, but that doesn't exist. To fix, change the repo's baseurl to 'el/9'
+sed -i 's/el\/10/el\/9/g' /etc/yum.repos.d/timescale_timescaledb.repo
+
 dnf install -y libheif libheif-freeworld ffmpeg rsync vim bash-completion postgresql18-server postgresql18-contrib timescaledb-2-postgresql-18
 ```
 
