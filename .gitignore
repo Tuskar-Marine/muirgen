@@ -1,0 +1,13 @@
+# Symlinks to things that live outside this repo (charts are licensed; bbs and Maps are separate projects)
+/Canada - DFO
+/Maps
+/bbs
+
+# AI session notes
+/SESSION_HANDOFF.md
+/USER_RULES.md
+
+# Build output
+target/
+__pycache__/
+
