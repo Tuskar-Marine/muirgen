@@ -936,7 +936,7 @@ const App = () => {
                         <div className="telemetry-block">
                           <div className="telemetry-label">Status</div>
                           <div className="telemetry-value" style={{ color: entity.is_active ? 'var(--neon-red)' : 'var(--soft-red)' }}>
-                            {entity.is_active ? 'Aactive' : 'Deactivated'}
+                            {entity.is_active ? 'Active' : 'Deactivated'}
                           </div>
                         </div>
                       </>
